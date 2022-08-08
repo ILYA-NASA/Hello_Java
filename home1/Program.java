@@ -4,18 +4,21 @@ public class Program {
 
     // 1 Выбросить случайное целое число и сохранить в i
     public static int randomNum(int min, int max) {
-        int i = (int) (Math.random() * ((max - min) + 1)) + min;
-        return i;
+        int number = (int) (Math.random() * ((max - min) + 1)) + min;
+        return number;
     }
 
     // 2 Посчитать и сохранить в n номер старшего значащего бита выпавшего числа
-    // public static byte seniorBit(int i) {
-
-    // }
+    public static int seniorBit(int i) {
+        int binLen = Integer.toBinaryString(i).length();        
+        return binLen;
+    }
 
     public static void main(String[] args) {
-        int i = randomNum(1, 10);
-        System.out.println("integer between 1 and 10: i = " + i);
+        int i = randomNum(1, 10000);
+        System.out.println("integer between 1 and 10000: i = " + i);
+        int n = seniorBit(i);
+        System.out.println("number of the senior bit from i: n = " + n);
     }
 
 }
