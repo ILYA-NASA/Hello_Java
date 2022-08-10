@@ -66,6 +66,7 @@ public class Program {
             ex.printStackTrace();
         }
     }
+
     public static void main(String[] args) {
         int min = 1, max = 10_000;
         int i = randomNum(min, max);
@@ -83,4 +84,5 @@ public class Program {
 
 // Пункты реализовать в методе main
 // *Пункты реализовать в разных методах
+
 // **Реализовать один из пунктов рекурсией
