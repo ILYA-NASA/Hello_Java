@@ -49,10 +49,8 @@ public class Program {
                 // writer.write(System.getProperty("line.separator")); // построчная запись
             }
             writer.close();
-            ;
         } catch (IOException ex) {
             ex.printStackTrace();
-            ;
         }
     }
 
