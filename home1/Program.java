@@ -41,22 +41,9 @@ public class Program {
     }
 
     // 5 Сохранить оба массива в файлы с именами m1 и m2 соответственно.
-    public static void saveArrayM1(ArrayList<Integer> arr) {
+    public static void saveArray(ArrayList<Integer> arr, String fileName) {
         try {
-            FileWriter writer = new FileWriter("m1.txt");
-            for (Integer c : arr) {
-                writer.write(c + "\t");
-                // writer.write(System.getProperty("line.separator")); // построчная запись
-            }
-            writer.close();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    public static void saveArrayM2(ArrayList<Integer> arr) {
-        try {
-            FileWriter writer = new FileWriter("m2.txt");
+            FileWriter writer = new FileWriter(fileName);
             for (Integer c : arr) {
                 writer.write(c + "\t");
                 // writer.write(System.getProperty("line.separator")); // построчная запись
@@ -77,12 +64,7 @@ public class Program {
         // System.out.print("array values multiple n > i: " + m1);
         ArrayList<Integer> m2 = arrayNotMult(i, n, min);
         // System.out.print("array values not multiple n < i: " + m2);
-        saveArrayM1(m1);
-        saveArrayM2(m2);
+        saveArray(m1, "home1/m1.txt");
+        saveArray(m2, "home1/m2.txt");
     }
 }
-
-// Пункты реализовать в методе main
-// *Пункты реализовать в разных методах
-
-// **Реализовать один из пунктов рекурсией
