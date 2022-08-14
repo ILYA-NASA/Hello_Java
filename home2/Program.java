@@ -62,7 +62,7 @@ public class Program {
     public static String replacEqual(String mathTask) {
         StringBuilder task = new StringBuilder(mathTask);
         int index = task.indexOf("=");
-        return task.deleteCharAt(index).insert(index, "equal").toString();
+        return task.deleteCharAt(index).insert(index, "равно").toString();
     }
 
     // 6 *Замените символ “=” на слово “равно”. Используйте методы
@@ -112,7 +112,7 @@ public class Program {
         System.out.println(replacEqual(compilerMathToStr(a, b, '+')));
 
         // 6
-        System.out.println(replacEqual(compilerMathToStr(a, b, '-')));
+        System.out.println(nextReplacEquel(compilerMathToStr(a, b, '-')));
         System.out.println();
     }
 
