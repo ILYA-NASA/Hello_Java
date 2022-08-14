@@ -52,26 +52,28 @@ public class Program {
             case '*':
                 mathTask.append(num1 * num2);
                 break;
-            }
-            return mathTask.toString();
         }
-        
-        // 5 Замените символ “=” на слово “равно”. Используйте методы
-        // StringBuilder.insert(),
-        // StringBuilder.deleteCharAt().
-        public static String replacEqual(String mathTask) {
-            StringBuilder task = new StringBuilder(mathTask);
-            return task.deleteCharAt(7).insert(7, "equal").toString();
-        }
-        
-        // 6 *Замените символ “=” на слово “равно”. Используйте методы
-        // StringBuilder.replace().
-        public static String nextReplacEquel(String mathTask) {
-            StringBuilder task = new StringBuilder(mathTask);
-            return task.replace(7, 8, "equel").toString();
-        }
+        return mathTask.toString();
+    }
 
-        public static void main(String[] args) {
+    // 5 Замените символ “=” на слово “равно”. Используйте методы
+    // StringBuilder.insert(),
+    // StringBuilder.deleteCharAt().
+    public static String replacEqual(String mathTask) {
+        StringBuilder task = new StringBuilder(mathTask);
+        int index = task.indexOf("=");
+        return task.deleteCharAt(index).insert(index, "equal").toString();
+    }
+
+    // 6 *Замените символ “=” на слово “равно”. Используйте методы
+    // StringBuilder.replace().
+    public static String nextReplacEquel(String mathTask) {
+        StringBuilder task = new StringBuilder(mathTask);
+        int index = task.indexOf("=");
+        return task.replace(index, index + 1, "equel").toString();
+    }
+
+    public static void main(String[] args) {
         Scanner iScanner = new Scanner(System.in);
         System.out.printf("Введите первую строку: ");
         String str1 = iScanner.nextLine();
@@ -80,7 +82,8 @@ public class Program {
         iScanner.close();
 
         // 1
-        System.out.println("1.\nНиже все наименьшие окна первой строки, содержащие все символы второй строки (при их наличии): ");
+        System.out.println(
+                "1.\nНиже все наименьшие окна первой строки, содержащие все символы второй строки (при их наличии): ");
         minWindow(str1, str2);
 
         // 2
@@ -102,7 +105,7 @@ public class Program {
         System.out.println(compilerMathToStr(a, b, '+'));
         System.out.println(compilerMathToStr(a, b, '-'));
         System.out.println(compilerMathToStr(a, b, '*'));
-    
+
         // 5
         System.out.println();
         System.out.println("5-6.\nПримеры с заменой знака '=' на слово");
