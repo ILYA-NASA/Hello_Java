@@ -1,6 +1,7 @@
 package home3;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -50,15 +51,26 @@ public class Program {
         list.remove(2);
         return list;
     }
-    
+
     // 7. Напишите программу для поиска элемента в списке массивов.
     public static boolean searchElementList(List<String> list, String element) {
-        if (list.contains(element)) return true; 
-        else return false;
+        if (list.contains(element))
+            return true;
+        else
+            return false;
+    }
+
+    // 8. Напишите программу для сортировки заданного списка массивов.
+    public static List<String> sortList(List<String> list) {
+        Collections.sort(list);
+        return list;
     }
     
-    // 8. Напишите программу для сортировки заданного списка массивов.
-    
+    // 9. Напишите программу для копирования одного списка массивов в другой.
+    public static List<String> copyList(List<String> list) {
+        List<String> newCopyList = List.copyOf(list);
+        return newCopyList;
+    }
     
     public static void main(String[] args) {
         // 1
@@ -84,8 +96,10 @@ public class Program {
         System.out.println(searchElementList(removeList(replacElement(addList(iterList(newColorList())), "yellow", "yellow!")), serchElement));
 
         // 8
+        System.out.println(sortList(removeList(replacElement(addList(iterList(newColorList())), "yellow", "yellow!"))));
 
+        // 9
+        System.out.println(copyList(sortList(removeList(replacElement(addList(iterList(newColorList())), "yellow", "yellow!")))));
     }
-
-    // 9. Напишите программу для копирования одного списка массивов в другой.
 }
+
