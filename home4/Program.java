@@ -1,26 +1,34 @@
 package home4;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 
 public class Program {
     // 1. Объявить и инициализировать связанный список в 10000 элементов случайным
     // числом от -1024 до 1024
-    public static List randomLinkedList(int max, int min) {
+    public static List<Integer> randomLinkedList(int max, int min) {
         List<Integer> randList = new LinkedList<>();
         while (randList.size() <= 10_000) {
             randList.add((int) (Math.random() * ((max - min) + 1)) + min);
         }
         return randList;
     }
-    
+
+    public static List<Integer> removeNegativeElement(List<Integer> list) {
+        list.removeIf(s -> s < 0);
+        return list;
+    }
+
     public static void main(String[] args) {
         // 1
         int max = 1024, min = -1024;
         System.out.println(randomLinkedList(max, min));
+
+        // 2
+        System.out.println(removeNegativeElement(randomLinkedList(max, min)));
     }
-
-
 
     // 2. Пройти по списку и удалить все отрицательные элементы
     // 3. Скопировать в переменные и удалить из списка первый и второй элементы,
