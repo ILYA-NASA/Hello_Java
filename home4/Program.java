@@ -1,9 +1,7 @@
 package home4;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.ListIterator;
 
 public class Program {
     // 1. Объявить и инициализировать связанный список в 10000 элементов случайным
@@ -16,23 +14,36 @@ public class Program {
         return randList;
     }
 
+    // 2. Пройти по списку и удалить все отрицательные элементы
     public static List<Integer> removeNegativeElement(List<Integer> list) {
         list.removeIf(s -> s < 0);
+        return list;
+    }
+
+    // 3. Скопировать в переменные и удалить из списка первый и второй элементы,
+    // сложить переменные, результат сохранить в начало списка.
+    public static List<Integer> firstPlusSecondElement(List<Integer> list) {
+        int fist = list.remove(0); // метод remove возвращает удалнный элемент в перемнную fist
+        int second = list.remove(0);
+        list.add(0, fist + second);
         return list;
     }
 
     public static void main(String[] args) {
         // 1
         int max = 1024, min = -1024;
-        System.out.println(randomLinkedList(max, min));
+        List<Integer> randomList = randomLinkedList(max, min);
+        System.out.println(randomList);
 
         // 2
-        System.out.println(removeNegativeElement(randomLinkedList(max, min)));
+        List<Integer> positiveList = removeNegativeElement(randomList);
+        System.out.println(positiveList);
+
+        // 3
+        List<Integer> updatedList = firstPlusSecondElement(positiveList);
+        System.out.println(updatedList);
     }
 
-    // 2. Пройти по списку и удалить все отрицательные элементы
-    // 3. Скопировать в переменные и удалить из списка первый и второй элементы,
-    // сложить переменные, результат сохранить в начало списка.
     // 4. Реализовать пункт №3 для всего списка.
     // 5. Измерить время исполнения пунктов №2 и №3.
     // 6. *Реализовать пункты с первого по пятый но с ArrayList. Сравнить время
