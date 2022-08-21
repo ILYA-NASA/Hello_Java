@@ -6,9 +6,9 @@ import java.util.List;
 public class Program {
     // 1. Объявить и инициализировать связанный список в 10000 элементов случайным
     // числом от -1024 до 1024
-    public static List<Integer> randomLinkedList(int max, int min) {
+    public static List<Integer> randomLinkedList(int max, int min, int sizeList) {
         List<Integer> randList = new LinkedList<>();
-        while (randList.size() <= 10_000) {
+        while (randList.size() <= sizeList) {
             randList.add((int) (Math.random() * ((max - min) + 1)) + min);
         }
         return randList;
@@ -29,10 +29,18 @@ public class Program {
         return list;
     }
 
+    // 4. Реализовать пункт №3 для всего списка.
+    public static List<Integer> sumElementList(List<Integer> list) {
+        while (list.size() > 1) {
+            firstPlusSecondElement(list);
+        }
+        return list;
+    }
+
     public static void main(String[] args) {
         // 1
-        int max = 1024, min = -1024;
-        List<Integer> randomList = randomLinkedList(max, min);
+        int max = 1024, min = -1024, sizeList = 10_000;
+        List<Integer> randomList = randomLinkedList(max, min, sizeList);
         System.out.println(randomList);
 
         // 2
@@ -42,9 +50,12 @@ public class Program {
         // 3
         List<Integer> updatedList = firstPlusSecondElement(positiveList);
         System.out.println(updatedList);
+    
+        // 4
+        List<Integer> sumList = sumElementList(updatedList);
+        System.out.println(sumList);
     }
 
-    // 4. Реализовать пункт №3 для всего списка.
     // 5. Измерить время исполнения пунктов №2 и №3.
     // 6. *Реализовать пункты с первого по пятый но с ArrayList. Сравнить время
     // исполнения.
