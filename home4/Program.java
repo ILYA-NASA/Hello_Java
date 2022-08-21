@@ -37,25 +37,35 @@ public class Program {
         return list;
     }
 
+    
     public static void main(String[] args) {
         // 1
         int max = 1024, min = -1024, sizeList = 10_000;
+        long start = System.currentTimeMillis();
         List<Integer> randomList = randomLinkedList(max, min, sizeList);
+        long finish = System.currentTimeMillis();
         System.out.println(randomList);
-
+        System.out.println(String.format("Время выполнения функции 'randomLinkedList': %s msc", (finish - start)));
+        
         // 2
+        start = System.currentTimeMillis();
         List<Integer> positiveList = removeNegativeElement(randomList);
+        finish = System.currentTimeMillis();
         System.out.println(positiveList);
-
+        System.out.println(String.format("Время выполнения функции 'removeNegativeElement': %s msc", (finish - start)));
+        
         // 3
+        start = System.currentTimeMillis();
         List<Integer> updatedList = firstPlusSecondElement(positiveList);
+        finish = System.currentTimeMillis();
         System.out.println(updatedList);
-    
+        System.out.println(String.format("Время выполнения функции 'firstPlusSecondElement': %s msc", (finish - start)));
+
         // 4
         List<Integer> sumList = sumElementList(updatedList);
         System.out.println(sumList);
     }
-
+    
     // 5. Измерить время исполнения пунктов №2 и №3.
     // 6. *Реализовать пункты с первого по пятый но с ArrayList. Сравнить время
     // исполнения.
