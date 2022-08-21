@@ -62,8 +62,11 @@ public class Program {
         System.out.println(String.format("Время выполнения функции 'firstPlusSecondElement': %s msc", (finish - start)));
 
         // 4
+        start = System.currentTimeMillis();
         List<Integer> sumList = sumElementList(updatedList);
+        finish = System.currentTimeMillis();
         System.out.println(sumList);
+        System.out.println(String.format("Время выполнения функции 'sumElementList': %s msc", (finish - start)));
     }
     
     // 5. Измерить время исполнения пунктов №2 и №3.
