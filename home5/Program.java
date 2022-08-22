@@ -32,22 +32,27 @@ public class Program {
         javaLessonsMap.replaceAll((a, b) -> b + "!");
         javaLessonsMap.forEach((a, b) -> System.out.println("Номер урока: " + a + ". Тема урока (с изумлением): " + b));
         System.out.println();
-        
+
         // 4. Добавить нового автора и название книги если соответствующего ключа не
         // было.
         System.out.println("Задание №4\nДобавляем 11 урок и его тему в словарь:");
         javaLessonsMap.computeIfAbsent("Урок 11", b -> getNewValue());
         javaLessonsMap.forEach((a, b) -> System.out.println("Номер урока: " + a + ". Тема урока (с изумлением): " + b));
+        System.out.println();
 
+        // 5. Если ключ, указанный в запросе, имеется, вырезать из соответствующего
+        // ключу значения первое слово.
+        System.out.println("Задание №5\nУдаляем слово \"Знакомство\" из темы первого урока:");
+        javaLessonsMap.computeIfPresent("Урок 1", (a,b) -> b.replaceFirst("Знакомство", ""));
+        javaLessonsMap.forEach((a, b) -> System.out.println("Номер урока: " + a + ". Тема урока (с изумлением): " + b));
+        System.out.println();
     }
 
     // 4
     public static String getNewValue() {
-        return "ООП: От простого к практике!";        
+        return "ООП: От простого к практике!";
     }
 
-    // 5. Если ключ, указанный в запросе, имеется, вырезать из соответствующего
-    // ключу значения первое слово.
     // 6. *Пройти по словарю другим, не таким как в пункте 3, методом и вывести пары
     // ключ значение в консоль.
     // 7. ** Пройти по словарю другим, не таким как в пункте 3 и 6, методом.
