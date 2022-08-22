@@ -23,9 +23,9 @@ public class Program {
     // 3. Скопировать в переменные и удалить из списка первый и второй элементы,
     // сложить переменные, результат сохранить в начало списка.
     public static List<Integer> firstPlusSecondElement(List<Integer> list) {
-        int fist = list.remove(0); // метод remove возвращает удалнный элемент в перемнную fist
+        int first = list.remove(0); // метод remove возвращает удаленный элемент в перемнную first
         int second = list.remove(0);
-        list.add(0, fist + second);
+        list.add(0, first + second);
         return list;
     }
 
