@@ -1,9 +1,27 @@
 package home5;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Program {
-    // 1. Объявить и инициализировать словарь hashMap<String, String>
-    // 2. Добавить в словарь 10 пар "Ключ - Значение". Автор и название книги
-    // например.
+    public static void main(String[] args) {
+        // 1. Объявить и инициализировать словарь hashMap<String, String>
+        Map<String, String> javaLessonsMap = new HashMap<>();
+        // 2. Добавить в словарь 10 пар "Ключ - Значение". Автор и название книги
+        // например.
+        javaLessonsMap.put("Урок 1",  "Знакомство с языком программирования Java");
+        javaLessonsMap.put("Урок 2",  "Почему вы не можете не использовать API");
+        javaLessonsMap.put("Урок 3",  "Коллекции JAVA: Введение");
+        javaLessonsMap.put("Урок 4",  "Хранение и обработка данных ч1: приоритетные коллекции");
+        javaLessonsMap.put("Урок 5",  "Хранение и обработка данных ч2: множество коллекций Map");
+        javaLessonsMap.put("Урок 6",  "Хранение и обработка данных ч3: множество коллекций Set");
+        javaLessonsMap.put("Урок 7",  "Введение в ООП. Свои типы и концепты");
+        javaLessonsMap.put("Урок 8",  "Принципы ООП Абстракция и интерфейсы. Пример проектирования");
+        javaLessonsMap.put("Урок 9",  "Некоторые стандартные интерфейсы Java и примеры их использования");
+        javaLessonsMap.put("Урок 10",  "ООП: Обобщения");
+        System.out.println(javaLessonsMap);
+    }
+    
     // 3. Пройти по словарю и добавить к значениям символ "!"
     // 4. Добавить нового автора и название книги если соответствующего ключа не
     // было.
