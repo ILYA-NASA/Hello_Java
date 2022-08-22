@@ -7,7 +7,8 @@ public class Program {
     public static void main(String[] args) {
         // 1. Объявить и инициализировать словарь hashMap<String, String>
         Map<String, String> javaLessonsMap = new HashMap<>();
-        System.out.println("Задание №1\nИнициализируем словарь в котором будут храниться номра и темы уроков по курсу \"Знакомство с JAVA\"");
+        System.out.println(
+                "Задание №1\nИнициализируем словарь в котором будут храниться номра и темы уроков по курсу \"Знакомство с JAVA\"");
         System.out.println();
 
         // 2. Добавить в словарь 10 пар "Ключ - Значение". Автор и название книги
@@ -23,13 +24,13 @@ public class Program {
         javaLessonsMap.put("Урок 8", "Принципы ООП Абстракция и интерфейсы. Пример проектирования");
         javaLessonsMap.put("Урок 9", "Некоторые стандартные интерфейсы Java и примеры их использования");
         javaLessonsMap.put("Урок 10", "ООП: Обобщения");
-        javaLessonsMap.forEach((a,b) -> System.out.println("Номер урока: " + a + ". Тема урока: " + b));
+        javaLessonsMap.forEach((a, b) -> System.out.println("Номер урока: " + a + ". Тема урока: " + b));
         System.out.println();
 
         // 3. Пройти по словарю и добавить к значениям символ "!"
         System.out.println("Задание №3\nПридаем эмоциональную окраску темам уроков:");
         javaLessonsMap.replaceAll((a, b) -> b + "!");
-        javaLessonsMap.forEach((a,b) -> System.out.println("Номер урока: " + a + ". Тема урока (с изумлением): " + b));
+        javaLessonsMap.forEach((a, b) -> System.out.println("Номер урока: " + a + ". Тема урока (с изумлением): " + b));
         System.out.println();
     }
 
