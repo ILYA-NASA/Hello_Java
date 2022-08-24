@@ -26,6 +26,10 @@ public class Program {
         System.out.println(
                 "\n3. Пройти по множеству hs и, при условии наличия соответствующего ключа в множестве lhs, удалить ключ из hs:");
         System.out.println("hs: " + removeElementSet(hs, lhs));
+        // 3.
+        System.out.println(
+                "\n4. Пройти по множеству lhs и, при условии отсутствия соответствующего ключа в множестве ts, добавит ключ в ts:");
+        System.out.println("lhs: " + addElementSet(lhs, ts));
     }
 
     // 2.
@@ -43,8 +47,12 @@ public class Program {
         return hs;
     }
 
-    // 4. Пройти по множеству lhs и, при условии отсутствия соответствующего ключа в
-    // множестве ts, добавит ключ в ts
+    // 4.
+    private static Set<Integer> addElementSet(Set<Integer> lhs, Set<Integer> ts) {
+        lhs.addAll(ts);
+        return lhs;
+    }
+
     // 5. Объявить и инициализировать множество TreeSet ts1 с компаратором Integer
     // (-1 при значении %2==0 ;0 при ==;1 при значении %2!=0). Заполнить ts1
     // 15 случайными числами и вывести на печать.
