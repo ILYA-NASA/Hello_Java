@@ -1,34 +1,37 @@
 package home6;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
 public class Program {
+
     public static void main(String[] args) {
-        // 1. Объявить и инициализировать множества HashSet hs, LinkedHashSet lhs и
-        // TreeSet ts
+        // 1.
+        System.out.println("1. Объявить и инициализировать множества HashSet hs, LinkedHashSet lhs и TreeSet ts:");
         Set<Integer> hs = new HashSet<>();
         Set<Integer> lhs = new LinkedHashSet<>();
         Set<Integer> ts = new TreeSet<>();
         System.out.println(hs + " - HashSet (hs)\n" + lhs + " - LinkedHashSet (lhs)\n" + ts + " - TreeSet (ts)");
+        System.out.println();
+        // 2.
+        System.out.println("2. Добавить в множества по 10 случайных целочисленных ключей:");
+        hs.addAll(rndmList());
+        lhs.addAll(rndmList());
+        ts.addAll(rndmList());
+        System.out.println("hs: " + hs + "\nlhs: " + lhs + "\nts: " + ts);
+    }
 
-        // 2. Добавить в множества по 10 случайных целочисленных ключей.
-        while (hs.size() < 10) {
-            hs.add((int) (Math.random() * 100));
+    // 2.
+    private static List<Integer> rndmList() {
+        List<Integer> rndList = new ArrayList<>();
+        while (rndList.size() < 10) {
+            rndList.add((int) (Math.random() * 100));
         }
-        System.out.println(hs);
-
-        // while (lhs.size() < 10) {
-        //     hs.add((int) (Math.random() * 100));
-        // }
-        // System.out.println(lhs);
-
-        // while (ts.size() < 10) {
-        //     hs.add((int) (Math.random() * 100));
-        // }
-        // System.out.println(ts);
+        return rndList;
     }
 
     // 3. Пройти по множеству hs и, при условии наличия соответствующего ключа в
