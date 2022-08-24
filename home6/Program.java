@@ -16,13 +16,16 @@ public class Program {
         Set<Integer> lhs = new LinkedHashSet<>();
         Set<Integer> ts = new TreeSet<>();
         System.out.println(hs + " - HashSet (hs)\n" + lhs + " - LinkedHashSet (lhs)\n" + ts + " - TreeSet (ts)");
-        System.out.println();
         // 2.
-        System.out.println("2. Добавить в множества по 10 случайных целочисленных ключей:");
+        System.out.println("\n2. Добавить в множества по 10 случайных целочисленных ключей:");
         hs.addAll(rndmList());
         lhs.addAll(rndmList());
         ts.addAll(rndmList());
         System.out.println("hs: " + hs + "\nlhs: " + lhs + "\nts: " + ts);
+        // 3.
+        System.out.println(
+                "\n3. Пройти по множеству hs и, при условии наличия соответствующего ключа в множестве lhs, удалить ключ из hs:");
+        System.out.println("hs: " + removeElementSet(hs, lhs));
     }
 
     // 2.
@@ -34,8 +37,12 @@ public class Program {
         return rndList;
     }
 
-    // 3. Пройти по множеству hs и, при условии наличия соответствующего ключа в
-    // множестве lhs, удалить ключ из hs
+    // 3.
+    private static Set<Integer> removeElementSet(Set<Integer> hs, Set<Integer> lhs) {
+        hs.removeAll(lhs);
+        return hs;
+    }
+
     // 4. Пройти по множеству lhs и, при условии отсутствия соответствующего ключа в
     // множестве ts, добавит ключ в ts
     // 5. Объявить и инициализировать множество TreeSet ts1 с компаратором Integer
